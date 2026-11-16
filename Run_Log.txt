@@ -1,69 +1,38 @@
-run started 2026-11-14 23:01:20 | python 3.14.3 | Windows-10-10.0.19045-SP0
+run started 2026-11-16 16:31:25 | python 3.14.3 | Windows-10-10.0.19045-SP0
 backbone=resnet50 n_splits=30 n_seeds=100 size_matching=greedy
 
 $ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe -m pytest -q -p no:cacheprovider
 .............                                                            [100%]
-13 passed in 8.48s
-[exit 0, 10s]
+13 passed in 14.49s
+[exit 0, 16s]
 
-$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe bus_audit_pipeline.py --data-dir D:\Brief\Haibin\code_fixed\data --out-dir D:\Brief\Haibin\code_fixed\outputs\h1 --n-splits 30
+$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe bus_audit_pipeline.py --data-dir D:\Brief\Haibin\Github\code\data --out-dir D:\Brief\Haibin\Github\code\outputs\h1 --n-splits 30
 [BUS-BRA] loading ...
 [BUS-BRA] 1875 images; extracting features ...
 [BUS-BRA] grouping variant: same-size rule ...
 [BUS-BRA] grouping variant: no size rule ...
-[BUS-BRA] done -> D:\Brief\Haibin\code_fixed\outputs\h1\BUS-BRA
+[BUS-BRA] done -> D:\Brief\Haibin\Github\code\outputs\h1\BUS-BRA
 [BUS-UCLM] loading ...
 [BUS-UCLM] 683 images; extracting features ...
 [BUS-UCLM] grouping variant: same-size rule ...
 [BUS-UCLM] grouping variant: no size rule ...
-[BUS-UCLM] done -> D:\Brief\Haibin\code_fixed\outputs\h1\BUS-UCLM
+[BUS-UCLM] done -> D:\Brief\Haibin\Github\code\outputs\h1\BUS-UCLM
 [BUSI] loading ...
 [BUSI] 780 images; extracting features ...
 [BUSI] grouping variant: same-size rule ...
 [BUSI] grouping variant: no size rule ...
-[BUSI] done -> D:\Brief\Haibin\code_fixed\outputs\h1\BUSI
+[BUSI] done -> D:\Brief\Haibin\Github\code\outputs\h1\BUSI
 [Curated-BUSI] loading ...
 [Curated-BUSI] 450 images; extracting features ...
 [Curated-BUSI] grouping variant: same-size rule ...
 [Curated-BUSI] grouping variant: no size rule ...
-[Curated-BUSI] done -> D:\Brief\Haibin\code_fixed\outputs\h1\Curated-BUSI
+[Curated-BUSI] done -> D:\Brief\Haibin\Github\code\outputs\h1\Curated-BUSI
 
-Summary written to D:\Brief\Haibin\code_fixed\outputs\h1\all_datasets_summary.csv
-[exit 0, 120s]
+Summary written to D:\Brief\Haibin\Github\code\outputs\h1\all_datasets_summary.csv
+[exit 0, 110s]
 
-$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe h3_resplit_baseline.py --data-dir D:\Brief\Haibin\code_fixed\data --out-dir D:\Brief\Haibin\code_fixed\outputs\h3 --backbone resnet50 --n-seeds 100 --inferred-groups D:\Brief\Haibin\code_fixed\outputs\h1\BUS-BRA\groups.csv --size-matching greedy
-Extracting ResNet-50 features on cpu ...
-  64/1875
-  128/1875
-  192/1875
-  256/1875
-  320/1875
-  384/1875
-  448/1875
-  512/1875
-  576/1875
-  640/1875
-  704/1875
-  768/1875
-  832/1875
-  896/1875
-  960/1875
-  1024/1875
-  1088/1875
-  1152/1875
-  1216/1875
-  1280/1875
-  1344/1875
-  1408/1875
-  1472/1875
-  1536/1875
-  1600/1875
-  1664/1875
-  1728/1875
-  1792/1875
-  1856/1875
-  1875/1875
-
+$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe h3_resplit_baseline.py --data-dir D:\Brief\Haibin\Github\code\data --out-dir D:\Brief\Haibin\Github\code\outputs\h3 --backbone resnet50 --n-seeds 100 --inferred-groups D:\Brief\Haibin\Github\code\outputs\h1\BUS-BRA\groups.csv --size-matching greedy
+Loaded cached features: D:\Brief\Haibin\Github\code\outputs\h3\features_resnet50.npy
 1875 images, 1064 patients, 32.4% malignant
 Using inferred groups: 1290 groups
 
@@ -90,81 +59,81 @@ vs inferred groups             AUROC     0.0163 -0.0188   0.0514 0.9202 0.3597  
 vs inferred groups Balanced accuracy     0.0123 -0.0244   0.0489 0.6638 0.5083                  60
 vs inferred groups    F1 (malignant)     0.0177 -0.0381   0.0736 0.6302 0.5300                  60
 
-Files written to D:\Brief\Haibin\code_fixed\outputs\h3
-[exit 0, 290s]
+Files written to D:\Brief\Haibin\Github\code\outputs\h3
+[exit 0, 77s]
 
-$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe check_manuscript.py --h1 D:\Brief\Haibin\code_fixed\outputs\h1\BUS-BRA\summary.json --h3 D:\Brief\Haibin\code_fixed\outputs\h3\summary.json --out D:\Brief\Haibin\code_fixed\outputs\discrepancy_report.csv --h1-uclm D:\Brief\Haibin\code_fixed\outputs\h1\BUS-UCLM\summary.json
-                                                           item  manuscript  new_output   status
-                                BUS-BRA held-out F1 (size rule)      0.6900    0.687550       OK
-                                     BUS-BRA held-out precision      0.7500    0.752656       OK
-                                        BUS-BRA held-out recall      0.6400    0.644407       OK
-                                    BUS-BRA fragmentation ratio      1.2100    1.204762 MISMATCH
-                       BUS-BRA single images wrongly linked (%)      0.0730    0.073293       OK
-                                      BUS-BRA n inferred groups   1290.0000 1290.000000       OK
-                                BUS-BRA leakage true groups (%)      0.6960    0.696240       OK
-                       BUS-BRA leakage detected by inferred (%)      0.4870    0.487093       OK
-                                             BUS-BRA no-size F1      0.4600    0.460430       OK
-                                      BUS-BRA no-size precision      0.5000    0.500166       OK
-                           BUS-BRA no-size leakage inferred (%)      0.4380    0.437760       OK
-                                           BUS-UCLM held-out F1      0.1800    0.179765       OK
-                                     BUS-UCLM n inferred groups     66.0000   66.000000       OK
-                               BUS-UCLM leakage true groups (%)      1.0000    0.999781       OK
-                      BUS-UCLM leakage detected by inferred (%)      0.9710    0.970584       OK
-                                            Table 5 image auroc      0.7700    0.773449 MISMATCH
-                                Table 5 image balanced_accuracy      0.6960    0.696805 MISMATCH
-                                     Table 5 image f1_malignant      0.5870    0.588045 MISMATCH
-                          Table 5 image leak_rate_true_patients      0.6900    0.690099       OK
-                                         Table 5 inferred auroc      0.7600    0.757167 MISMATCH
-                             Table 5 inferred balanced_accuracy      0.6900    0.684540 MISMATCH
-                                  Table 5 inferred f1_malignant      0.5770    0.570298 MISMATCH
-                       Table 5 inferred leak_rate_true_patients      0.2710    0.265988 MISMATCH
-                                          Table 5 patient auroc      0.7470    0.751388 MISMATCH
-                              Table 5 patient balanced_accuracy      0.6780    0.680116 MISMATCH
-                                   Table 5 patient f1_malignant      0.5580    0.561031 MISMATCH
-                        Table 5 patient leak_rate_true_patients      0.0000    0.000000       OK
-                       Table 6 vs patient-level AUROC mean diff      0.0225    0.022061 MISMATCH
-                          Table 6 vs patient-level AUROC CI low     -0.0112   -0.011254 MISMATCH
-                         Table 6 vs patient-level AUROC CI high      0.0562    0.055375 MISMATCH
-                               Table 6 vs patient-level AUROC t      1.3300    1.313922 MISMATCH
-                               Table 6 vs patient-level AUROC p      0.1880    0.191909 MISMATCH
-              Table 6 vs patient-level AUROC seeds image higher     73.0000   75.000000 MISMATCH
-           Table 6 vs patient-level Balanced accuracy mean diff      0.0181    0.016689 MISMATCH
-              Table 6 vs patient-level Balanced accuracy CI low     -0.0189   -0.018563 MISMATCH
-             Table 6 vs patient-level Balanced accuracy CI high      0.0551    0.051941 MISMATCH
-                   Table 6 vs patient-level Balanced accuracy t      0.9700    0.939371 MISMATCH
-                   Table 6 vs patient-level Balanced accuracy p      0.3340    0.349827 MISMATCH
-  Table 6 vs patient-level Balanced accuracy seeds image higher     71.0000   71.000000       OK
-              Table 6 vs patient-level F1 (malignant) mean diff      0.0287    0.027014 MISMATCH
-                 Table 6 vs patient-level F1 (malignant) CI low     -0.0260   -0.026077 MISMATCH
-                Table 6 vs patient-level F1 (malignant) CI high      0.0834    0.080104 MISMATCH
-                      Table 6 vs patient-level F1 (malignant) t      1.0400    1.009608 MISMATCH
-                      Table 6 vs patient-level F1 (malignant) p      0.3010    0.315144 MISMATCH
-     Table 6 vs patient-level F1 (malignant) seeds image higher     68.0000   73.000000 MISMATCH
-                     Table 6 vs inferred groups AUROC mean diff      0.0099    0.016282 MISMATCH
-                        Table 6 vs inferred groups AUROC CI low     -0.0267   -0.018827 MISMATCH
-                       Table 6 vs inferred groups AUROC CI high      0.0466    0.051391 MISMATCH
-                             Table 6 vs inferred groups AUROC t      0.5400    0.920208 MISMATCH
-                             Table 6 vs inferred groups AUROC p      0.5920    0.359701 MISMATCH
-            Table 6 vs inferred groups AUROC seeds image higher     61.0000   66.000000 MISMATCH
-         Table 6 vs inferred groups Balanced accuracy mean diff      0.0059    0.012265 MISMATCH
-            Table 6 vs inferred groups Balanced accuracy CI low     -0.0306   -0.024396 MISMATCH
-           Table 6 vs inferred groups Balanced accuracy CI high      0.0424    0.048926 MISMATCH
-                 Table 6 vs inferred groups Balanced accuracy t      0.3200    0.663826 MISMATCH
-                 Table 6 vs inferred groups Balanced accuracy p      0.7480    0.508345 MISMATCH
-Table 6 vs inferred groups Balanced accuracy seeds image higher     57.0000   60.000000 MISMATCH
-            Table 6 vs inferred groups F1 (malignant) mean diff      0.0096    0.017746 MISMATCH
-               Table 6 vs inferred groups F1 (malignant) CI low     -0.0441   -0.038126 MISMATCH
-              Table 6 vs inferred groups F1 (malignant) CI high      0.0633    0.073619 MISMATCH
-                    Table 6 vs inferred groups F1 (malignant) t      0.3500    0.630233 MISMATCH
-                    Table 6 vs inferred groups F1 (malignant) p      0.7240    0.529994 MISMATCH
-   Table 6 vs inferred groups F1 (malignant) seeds image higher     58.0000   60.000000 MISMATCH
-                                           n_test min (patient)    369.0000  365.000000 MISMATCH
-                                           n_test max (patient)    388.0000  390.000000 MISMATCH
-                                          n_test min (inferred)    357.0000  365.000000 MISMATCH
-                                          n_test max (inferred)    388.0000  390.000000 MISMATCH
-                             seeds dropped from paired analysis      0.0000    0.000000       OK
+$ C:\Users\Hyperlink\AppData\Local\Programs\Python\Python314\python.exe check_manuscript.py --h1 D:\Brief\Haibin\Github\code\outputs\h1\BUS-BRA\summary.json --h3 D:\Brief\Haibin\Github\code\outputs\h3\summary.json --out D:\Brief\Haibin\Github\code\outputs\discrepancy_report.csv --h1-uclm D:\Brief\Haibin\Github\code\outputs\h1\BUS-UCLM\summary.json
+                                                           item  manuscript  new_output status
+                                BUS-BRA held-out F1 (size rule)      0.6900    0.687550     OK
+                                     BUS-BRA held-out precision      0.7500    0.752656     OK
+                                        BUS-BRA held-out recall      0.6400    0.644407     OK
+                                    BUS-BRA fragmentation ratio      1.2000    1.204762     OK
+                       BUS-BRA single images wrongly linked (%)      0.0730    0.073293     OK
+                                      BUS-BRA n inferred groups   1290.0000 1290.000000     OK
+                                BUS-BRA leakage true groups (%)      0.6960    0.696240     OK
+                       BUS-BRA leakage detected by inferred (%)      0.4870    0.487093     OK
+                                             BUS-BRA no-size F1      0.4600    0.460430     OK
+                                      BUS-BRA no-size precision      0.5000    0.500166     OK
+                           BUS-BRA no-size leakage inferred (%)      0.4380    0.437760     OK
+                                           BUS-UCLM held-out F1      0.1800    0.179765     OK
+                                     BUS-UCLM n inferred groups     66.0000   66.000000     OK
+                               BUS-UCLM leakage true groups (%)      1.0000    0.999781     OK
+                      BUS-UCLM leakage detected by inferred (%)      0.9710    0.970584     OK
+                                            Table 5 image auroc      0.7730    0.773449     OK
+                                Table 5 image balanced_accuracy      0.6970    0.696805     OK
+                                     Table 5 image f1_malignant      0.5880    0.588045     OK
+                          Table 5 image leak_rate_true_patients      0.6900    0.690099     OK
+                                         Table 5 inferred auroc      0.7570    0.757167     OK
+                             Table 5 inferred balanced_accuracy      0.6850    0.684540     OK
+                                  Table 5 inferred f1_malignant      0.5700    0.570298     OK
+                       Table 5 inferred leak_rate_true_patients      0.2660    0.265988     OK
+                                          Table 5 patient auroc      0.7510    0.751388     OK
+                              Table 5 patient balanced_accuracy      0.6800    0.680116     OK
+                                   Table 5 patient f1_malignant      0.5610    0.561031     OK
+                        Table 5 patient leak_rate_true_patients      0.0000    0.000000     OK
+                       Table 6 vs patient-level AUROC mean diff      0.0221    0.022061     OK
+                          Table 6 vs patient-level AUROC CI low     -0.0113   -0.011254     OK
+                         Table 6 vs patient-level AUROC CI high      0.0554    0.055375     OK
+                               Table 6 vs patient-level AUROC t      1.3100    1.313922     OK
+                               Table 6 vs patient-level AUROC p      0.1920    0.191909     OK
+              Table 6 vs patient-level AUROC seeds image higher     75.0000   75.000000     OK
+           Table 6 vs patient-level Balanced accuracy mean diff      0.0167    0.016689     OK
+              Table 6 vs patient-level Balanced accuracy CI low     -0.0186   -0.018563     OK
+             Table 6 vs patient-level Balanced accuracy CI high      0.0519    0.051941     OK
+                   Table 6 vs patient-level Balanced accuracy t      0.9400    0.939371     OK
+                   Table 6 vs patient-level Balanced accuracy p      0.3500    0.349827     OK
+  Table 6 vs patient-level Balanced accuracy seeds image higher     71.0000   71.000000     OK
+              Table 6 vs patient-level F1 (malignant) mean diff      0.0270    0.027014     OK
+                 Table 6 vs patient-level F1 (malignant) CI low     -0.0261   -0.026077     OK
+                Table 6 vs patient-level F1 (malignant) CI high      0.0801    0.080104     OK
+                      Table 6 vs patient-level F1 (malignant) t      1.0100    1.009608     OK
+                      Table 6 vs patient-level F1 (malignant) p      0.3150    0.315144     OK
+     Table 6 vs patient-level F1 (malignant) seeds image higher     73.0000   73.000000     OK
+                     Table 6 vs inferred groups AUROC mean diff      0.0163    0.016282     OK
+                        Table 6 vs inferred groups AUROC CI low     -0.0188   -0.018827     OK
+                       Table 6 vs inferred groups AUROC CI high      0.0514    0.051391     OK
+                             Table 6 vs inferred groups AUROC t      0.9200    0.920208     OK
+                             Table 6 vs inferred groups AUROC p      0.3600    0.359701     OK
+            Table 6 vs inferred groups AUROC seeds image higher     66.0000   66.000000     OK
+         Table 6 vs inferred groups Balanced accuracy mean diff      0.0123    0.012265     OK
+            Table 6 vs inferred groups Balanced accuracy CI low     -0.0244   -0.024396     OK
+           Table 6 vs inferred groups Balanced accuracy CI high      0.0489    0.048926     OK
+                 Table 6 vs inferred groups Balanced accuracy t      0.6600    0.663826     OK
+                 Table 6 vs inferred groups Balanced accuracy p      0.5080    0.508345     OK
+Table 6 vs inferred groups Balanced accuracy seeds image higher     60.0000   60.000000     OK
+            Table 6 vs inferred groups F1 (malignant) mean diff      0.0177    0.017746     OK
+               Table 6 vs inferred groups F1 (malignant) CI low     -0.0381   -0.038126     OK
+              Table 6 vs inferred groups F1 (malignant) CI high      0.0736    0.073619     OK
+                    Table 6 vs inferred groups F1 (malignant) t      0.6300    0.630233     OK
+                    Table 6 vs inferred groups F1 (malignant) p      0.5300    0.529994     OK
+   Table 6 vs inferred groups F1 (malignant) seeds image higher     60.0000   60.000000     OK
+                                           n_test min (patient)    365.0000  365.000000     OK
+                                           n_test max (patient)    390.0000  390.000000     OK
+                                          n_test min (inferred)    365.0000  365.000000     OK
+                                          n_test max (inferred)    390.0000  390.000000     OK
+                             seeds dropped from paired analysis      0.0000    0.000000     OK
 
-18/68 manuscript values reproduced; 50 MISMATCH
-[exit 1, 2s]
+68/68 manuscript values reproduced; 0 MISMATCH
+[exit 0, 1s]
 
-finished 2026-11-14 23:08:25; step exit codes [0, 0, 0]; manuscript check exit 1
+finished 2026-11-16 16:34:54; step exit codes [0, 0, 0]; manuscript check exit 0

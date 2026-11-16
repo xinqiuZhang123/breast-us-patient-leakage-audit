@@ -4,7 +4,7 @@
 Usage: python check_manuscript.py --h1 results/BUS-BRA/summary.json --h3 results_h3/summary.json \
                                   [--h1-uclm results/BUS-UCLM/summary.json] [--out discrepancy_report.csv]
 
-Every manuscript value below is the one currently printed in 'Haibin Article 13 nov.docx'. A row marked
+Every manuscript value below is the one currently printed in 'Haibin Article revised 16 Nov.docx'. A row marked
 MISMATCH means the TEXT/TABLE must be changed to the new output (never the other way round).
 Exit code 0 only if every row passes.
 """
@@ -19,7 +19,7 @@ H1 = [
     ("BUS-BRA held-out F1 (size rule)", "h1", "heldout_f1_mean", 0.69, 0.005),
     ("BUS-BRA held-out precision", "h1", "heldout_precision_mean", 0.75, 0.005),
     ("BUS-BRA held-out recall", "h1", "heldout_recall_mean", 0.64, 0.005),
-    ("BUS-BRA fragmentation ratio", "h1", "fragmentation_ratio_mean", 1.21, 0.005),
+    ("BUS-BRA fragmentation ratio", "h1", "fragmentation_ratio_mean", 1.20, 0.005),
     ("BUS-BRA single images wrongly linked (%)", "h1", "single_image_wrongly_linked_rate_mean", 0.073, 0.0005),
     ("BUS-BRA n inferred groups", "h1", "n_inferred_groups", 1290, 0.5),
     ("BUS-BRA leakage true groups (%)", "h1", "leak_true_groups_mean", 0.696, 0.0005),
@@ -35,19 +35,19 @@ UCLM = [
     ("BUS-UCLM leakage detected by inferred (%)", "uclm", "leak_inferred_mean", 0.971, 0.0005),
 ]
 H3_MEANS = {  # rule -> metric -> manuscript mean (Table 5)
-    "image": {"auroc": 0.770, "balanced_accuracy": 0.696, "f1_malignant": 0.587, "leak_rate_true_patients": 0.690},
-    "inferred": {"auroc": 0.760, "balanced_accuracy": 0.690, "f1_malignant": 0.577, "leak_rate_true_patients": 0.271},
-    "patient": {"auroc": 0.747, "balanced_accuracy": 0.678, "f1_malignant": 0.558, "leak_rate_true_patients": 0.0},
+    "image": {"auroc": 0.773, "balanced_accuracy": 0.697, "f1_malignant": 0.588, "leak_rate_true_patients": 0.690},
+    "inferred": {"auroc": 0.757, "balanced_accuracy": 0.685, "f1_malignant": 0.570, "leak_rate_true_patients": 0.266},
+    "patient": {"auroc": 0.751, "balanced_accuracy": 0.680, "f1_malignant": 0.561, "leak_rate_true_patients": 0.0},
 }
 TABLE6 = [  # comparison, metric, mean_diff, ci_low, ci_high, t, p, seeds
-    ("vs patient-level", "AUROC", 0.0225, -0.0112, 0.0562, 1.33, 0.188, 73),
-    ("vs patient-level", "Balanced accuracy", 0.0181, -0.0189, 0.0551, 0.97, 0.334, 71),
-    ("vs patient-level", "F1 (malignant)", 0.0287, -0.0260, 0.0834, 1.04, 0.301, 68),
-    ("vs inferred groups", "AUROC", 0.0099, -0.0267, 0.0466, 0.54, 0.592, 61),
-    ("vs inferred groups", "Balanced accuracy", 0.0059, -0.0306, 0.0424, 0.32, 0.748, 57),
-    ("vs inferred groups", "F1 (malignant)", 0.0096, -0.0441, 0.0633, 0.35, 0.724, 58),
+    ("vs patient-level", "AUROC", 0.0221, -0.0113, 0.0554, 1.31, 0.192, 75),
+    ("vs patient-level", "Balanced accuracy", 0.0167, -0.0186, 0.0519, 0.94, 0.350, 71),
+    ("vs patient-level", "F1 (malignant)", 0.0270, -0.0261, 0.0801, 1.01, 0.315, 73),
+    ("vs inferred groups", "AUROC", 0.0163, -0.0188, 0.0514, 0.92, 0.360, 66),
+    ("vs inferred groups", "Balanced accuracy", 0.0123, -0.0244, 0.0489, 0.66, 0.508, 60),
+    ("vs inferred groups", "F1 (malignant)", 0.0177, -0.0381, 0.0736, 0.63, 0.530, 60),
 ]
-MS_N_TEST = {"patient": (369, 388), "inferred": (357, 388)}   # Section 2.5 as printed
+MS_N_TEST = {"patient": (365, 390), "inferred": (365, 390)}   # Section 2.5 as printed
 
 
 def main():

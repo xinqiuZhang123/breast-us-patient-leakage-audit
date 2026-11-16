@@ -2,7 +2,7 @@ item,manuscript,new_output,status
 BUS-BRA held-out F1 (size rule),0.69,0.6875499175959058,OK
 BUS-BRA held-out precision,0.75,0.7526561619171562,OK
 BUS-BRA held-out recall,0.64,0.6444068312290752,OK
-BUS-BRA fragmentation ratio,1.21,1.204761904761905,MISMATCH
+BUS-BRA fragmentation ratio,1.2,1.204761904761905,OK
 BUS-BRA single images wrongly linked (%),0.073,0.07329322280966169,OK
 BUS-BRA n inferred groups,1290.0,1290.0,OK
 BUS-BRA leakage true groups (%),0.696,0.6962400000000001,OK
@@ -14,56 +14,56 @@ BUS-UCLM held-out F1,0.18,0.17976491846228054,OK
 BUS-UCLM n inferred groups,66.0,66.0,OK
 BUS-UCLM leakage true groups (%),1.0,0.9997810218978103,OK
 BUS-UCLM leakage detected by inferred (%),0.971,0.9705839416058395,OK
-Table 5 image auroc,0.77,0.7734487393510378,MISMATCH
-Table 5 image balanced_accuracy,0.696,0.6968047438146335,MISMATCH
-Table 5 image f1_malignant,0.587,0.5880445194411676,MISMATCH
+Table 5 image auroc,0.773,0.7734487393510378,OK
+Table 5 image balanced_accuracy,0.697,0.6968047438146335,OK
+Table 5 image f1_malignant,0.588,0.5880445194411676,OK
 Table 5 image leak_rate_true_patients,0.69,0.6900990723191671,OK
-Table 5 inferred auroc,0.76,0.7571665428821803,MISMATCH
-Table 5 inferred balanced_accuracy,0.69,0.6845398031846428,MISMATCH
-Table 5 inferred f1_malignant,0.577,0.5702981494464823,MISMATCH
-Table 5 inferred leak_rate_true_patients,0.271,0.2659880520342647,MISMATCH
-Table 5 patient auroc,0.747,0.7513882059895398,MISMATCH
-Table 5 patient balanced_accuracy,0.678,0.6801157616337575,MISMATCH
-Table 5 patient f1_malignant,0.558,0.5610309607365995,MISMATCH
+Table 5 inferred auroc,0.757,0.7571665428821803,OK
+Table 5 inferred balanced_accuracy,0.685,0.6845398031846428,OK
+Table 5 inferred f1_malignant,0.57,0.5702981494464823,OK
+Table 5 inferred leak_rate_true_patients,0.266,0.2659880520342647,OK
+Table 5 patient auroc,0.751,0.7513882059895398,OK
+Table 5 patient balanced_accuracy,0.68,0.6801157616337575,OK
+Table 5 patient f1_malignant,0.561,0.5610309607365995,OK
 Table 5 patient leak_rate_true_patients,0.0,0.0,OK
-Table 6 vs patient-level AUROC mean diff,0.0225,0.022060533361498078,MISMATCH
-Table 6 vs patient-level AUROC CI low,-0.0112,-0.011254138798900946,MISMATCH
-Table 6 vs patient-level AUROC CI high,0.0562,0.055375205521897106,MISMATCH
-Table 6 vs patient-level AUROC t,1.33,1.3139221075377945,MISMATCH
-Table 6 vs patient-level AUROC p,0.188,0.19190892510997495,MISMATCH
-Table 6 vs patient-level AUROC seeds image higher,73.0,75.0,MISMATCH
-Table 6 vs patient-level Balanced accuracy mean diff,0.0181,0.016688982180876017,MISMATCH
-Table 6 vs patient-level Balanced accuracy CI low,-0.0189,-0.01856287735750724,MISMATCH
-Table 6 vs patient-level Balanced accuracy CI high,0.0551,0.05194084171925928,MISMATCH
-Table 6 vs patient-level Balanced accuracy t,0.97,0.9393706255966935,MISMATCH
-Table 6 vs patient-level Balanced accuracy p,0.334,0.3498267766847175,MISMATCH
+Table 6 vs patient-level AUROC mean diff,0.0221,0.022060533361498078,OK
+Table 6 vs patient-level AUROC CI low,-0.0113,-0.011254138798900946,OK
+Table 6 vs patient-level AUROC CI high,0.0554,0.055375205521897106,OK
+Table 6 vs patient-level AUROC t,1.31,1.3139221075377945,OK
+Table 6 vs patient-level AUROC p,0.192,0.19190892510997495,OK
+Table 6 vs patient-level AUROC seeds image higher,75.0,75.0,OK
+Table 6 vs patient-level Balanced accuracy mean diff,0.0167,0.016688982180876017,OK
+Table 6 vs patient-level Balanced accuracy CI low,-0.0186,-0.01856287735750724,OK
+Table 6 vs patient-level Balanced accuracy CI high,0.0519,0.05194084171925928,OK
+Table 6 vs patient-level Balanced accuracy t,0.94,0.9393706255966935,OK
+Table 6 vs patient-level Balanced accuracy p,0.35,0.3498267766847175,OK
 Table 6 vs patient-level Balanced accuracy seeds image higher,71.0,71.0,OK
-Table 6 vs patient-level F1 (malignant) mean diff,0.0287,0.027013558704568202,MISMATCH
-Table 6 vs patient-level F1 (malignant) CI low,-0.026,-0.026077089710184555,MISMATCH
-Table 6 vs patient-level F1 (malignant) CI high,0.0834,0.08010420711932095,MISMATCH
-Table 6 vs patient-level F1 (malignant) t,1.04,1.0096083341371385,MISMATCH
-Table 6 vs patient-level F1 (malignant) p,0.301,0.31514421329453285,MISMATCH
-Table 6 vs patient-level F1 (malignant) seeds image higher,68.0,73.0,MISMATCH
-Table 6 vs inferred groups AUROC mean diff,0.0099,0.01628219646885755,MISMATCH
-Table 6 vs inferred groups AUROC CI low,-0.0267,-0.018826633496148854,MISMATCH
-Table 6 vs inferred groups AUROC CI high,0.0466,0.05139102643386395,MISMATCH
-Table 6 vs inferred groups AUROC t,0.54,0.9202075453602134,MISMATCH
-Table 6 vs inferred groups AUROC p,0.592,0.3597011459898729,MISMATCH
-Table 6 vs inferred groups AUROC seeds image higher,61.0,66.0,MISMATCH
-Table 6 vs inferred groups Balanced accuracy mean diff,0.0059,0.012264940629990633,MISMATCH
-Table 6 vs inferred groups Balanced accuracy CI low,-0.0306,-0.024395719784933538,MISMATCH
-Table 6 vs inferred groups Balanced accuracy CI high,0.0424,0.0489256010449148,MISMATCH
-Table 6 vs inferred groups Balanced accuracy t,0.32,0.663826096769423,MISMATCH
-Table 6 vs inferred groups Balanced accuracy p,0.748,0.5083446269514957,MISMATCH
-Table 6 vs inferred groups Balanced accuracy seeds image higher,57.0,60.0,MISMATCH
-Table 6 vs inferred groups F1 (malignant) mean diff,0.0096,0.017746369994685415,MISMATCH
-Table 6 vs inferred groups F1 (malignant) CI low,-0.0441,-0.038126084529915824,MISMATCH
-Table 6 vs inferred groups F1 (malignant) CI high,0.0633,0.07361882451928665,MISMATCH
-Table 6 vs inferred groups F1 (malignant) t,0.35,0.6302327054036054,MISMATCH
-Table 6 vs inferred groups F1 (malignant) p,0.724,0.5299943728935987,MISMATCH
-Table 6 vs inferred groups F1 (malignant) seeds image higher,58.0,60.0,MISMATCH
-n_test min (patient),369.0,365.0,MISMATCH
-n_test max (patient),388.0,390.0,MISMATCH
-n_test min (inferred),357.0,365.0,MISMATCH
-n_test max (inferred),388.0,390.0,MISMATCH
+Table 6 vs patient-level F1 (malignant) mean diff,0.027,0.027013558704568202,OK
+Table 6 vs patient-level F1 (malignant) CI low,-0.0261,-0.026077089710184555,OK
+Table 6 vs patient-level F1 (malignant) CI high,0.0801,0.08010420711932095,OK
+Table 6 vs patient-level F1 (malignant) t,1.01,1.0096083341371385,OK
+Table 6 vs patient-level F1 (malignant) p,0.315,0.31514421329453285,OK
+Table 6 vs patient-level F1 (malignant) seeds image higher,73.0,73.0,OK
+Table 6 vs inferred groups AUROC mean diff,0.0163,0.01628219646885755,OK
+Table 6 vs inferred groups AUROC CI low,-0.0188,-0.018826633496148854,OK
+Table 6 vs inferred groups AUROC CI high,0.0514,0.05139102643386395,OK
+Table 6 vs inferred groups AUROC t,0.92,0.9202075453602134,OK
+Table 6 vs inferred groups AUROC p,0.36,0.3597011459898729,OK
+Table 6 vs inferred groups AUROC seeds image higher,66.0,66.0,OK
+Table 6 vs inferred groups Balanced accuracy mean diff,0.0123,0.012264940629990633,OK
+Table 6 vs inferred groups Balanced accuracy CI low,-0.0244,-0.024395719784933538,OK
+Table 6 vs inferred groups Balanced accuracy CI high,0.0489,0.0489256010449148,OK
+Table 6 vs inferred groups Balanced accuracy t,0.66,0.663826096769423,OK
+Table 6 vs inferred groups Balanced accuracy p,0.508,0.5083446269514957,OK
+Table 6 vs inferred groups Balanced accuracy seeds image higher,60.0,60.0,OK
+Table 6 vs inferred groups F1 (malignant) mean diff,0.0177,0.017746369994685415,OK
+Table 6 vs inferred groups F1 (malignant) CI low,-0.0381,-0.038126084529915824,OK
+Table 6 vs inferred groups F1 (malignant) CI high,0.0736,0.07361882451928665,OK
+Table 6 vs inferred groups F1 (malignant) t,0.63,0.6302327054036054,OK
+Table 6 vs inferred groups F1 (malignant) p,0.53,0.5299943728935987,OK
+Table 6 vs inferred groups F1 (malignant) seeds image higher,60.0,60.0,OK
+n_test min (patient),365.0,365.0,OK
+n_test max (patient),390.0,390.0,OK
+n_test min (inferred),365.0,365.0,OK
+n_test max (inferred),390.0,390.0,OK
 seeds dropped from paired analysis,0.0,0.0,OK
