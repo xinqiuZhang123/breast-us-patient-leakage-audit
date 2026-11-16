@@ -15,7 +15,5 @@
     pip install -r requirements.txt     # pin exact versions with pip freeze before archiving
     python run_all.py --data-dir ./data --out-dir ./outputs
 
-ResNet-50 uses torchvision `ResNet50_Weights.IMAGENET1K_V2` (downloaded on first run). Use
-`--backbone handcrafted --n-splits 3 --n-seeds 20` only for a quick pipeline test, never for reported results.
 
 
