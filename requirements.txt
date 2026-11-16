@@ -1,0 +1,12 @@
+
+
+# scikit-learn 1.9.1, pytest. The manuscript states Python 3.14;
+numpy
+pandas
+scipy
+scikit-learn
+pillow
+matplotlib
+pytest
+torch
+torchvision
