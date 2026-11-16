@@ -1,0 +1,261 @@
+{
+  "backbone": "resnet50",
+  "n_seeds_used": 100,
+  "n_images": 1875,
+  "n_patients": 1064,
+  "per_rule": {
+    "image": {
+      "auroc": {
+        "mean": 0.7734487393510378,
+        "ci_low": 0.7690531186440323,
+        "ci_high": 0.7778091745474778
+      },
+      "balanced_accuracy": {
+        "mean": 0.6968047438146335,
+        "ci_low": 0.692125878522476,
+        "ci_high": 0.7014236775026907
+      },
+      "f1_malignant": {
+        "mean": 0.5880445194411676,
+        "ci_low": 0.5805243834749804,
+        "ci_high": 0.5953358277322336
+      },
+      "leak_rate_true_patients": {
+        "mean": 0.6900990723191671,
+        "ci_low": 0.6854368158432402,
+        "ci_high": 0.6947990467934902
+      }
+    },
+    "inferred": {
+      "auroc": {
+        "mean": 0.7571665428821803,
+        "ci_low": 0.7516670464674471,
+        "ci_high": 0.7625993996470137
+      },
+      "balanced_accuracy": {
+        "mean": 0.6845398031846428,
+        "ci_low": 0.6791209662401191,
+        "ci_high": 0.6899238586193132
+      },
+      "f1_malignant": {
+        "mean": 0.5702981494464823,
+        "ci_low": 0.5625090420719789,
+        "ci_high": 0.5780681311521957
+      },
+      "leak_rate_true_patients": {
+        "mean": 0.2659880520342647,
+        "ci_low": 0.26152530214403913,
+        "ci_high": 0.27053168767642416
+      }
+    },
+    "patient": {
+      "auroc": {
+        "mean": 0.7513882059895398,
+        "ci_low": 0.746569468427254,
+        "ci_high": 0.7562398239435623
+      },
+      "balanced_accuracy": {
+        "mean": 0.6801157616337575,
+        "ci_low": 0.6754068888659703,
+        "ci_high": 0.6849029267477531
+      },
+      "f1_malignant": {
+        "mean": 0.5610309607365995,
+        "ci_low": 0.5540265921981735,
+        "ci_high": 0.5682694466339978
+      },
+      "leak_rate_true_patients": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      }
+    }
+  },
+  "paired_vs_image": {
+    "patient": {
+      "auroc": {
+        "mean_difference_image_minus_patient": 0.022060533361498078,
+        "ci_low": 0.01566275563335077,
+        "ci_high": 0.028466494422723924,
+        "wilcoxon_p": 3.486351197836002e-08,
+        "cohens_dz": 0.6699714465676172,
+        "seeds_where_image_split_higher": 75
+      },
+      "balanced_accuracy": {
+        "mean_difference_image_minus_patient": 0.016688982180876017,
+        "ci_low": 0.009778667938289978,
+        "ci_high": 0.023452609306128688,
+        "wilcoxon_p": 5.75624329737253e-06,
+        "cohens_dz": 0.4789869150413402,
+        "seeds_where_image_split_higher": 71
+      },
+      "f1_malignant": {
+        "mean_difference_image_minus_patient": 0.027013558704568202,
+        "ci_low": 0.016523765339897262,
+        "ci_high": 0.03705987253123755,
+        "wilcoxon_p": 3.512862758501503e-06,
+        "cohens_dz": 0.5148012596851174,
+        "seeds_where_image_split_higher": 73
+      }
+    },
+    "inferred": {
+      "auroc": {
+        "mean_difference_image_minus_inferred": 0.01628219646885755,
+        "ci_low": 0.009430206676226092,
+        "ci_high": 0.023023573002544123,
+        "wilcoxon_p": 3.225460839514926e-05,
+        "cohens_dz": 0.46921562303470465,
+        "seeds_where_image_split_higher": 66
+      },
+      "balanced_accuracy": {
+        "mean_difference_image_minus_inferred": 0.012264940629990633,
+        "ci_low": 0.005266524065031563,
+        "ci_high": 0.019381350096861934,
+        "wilcoxon_p": 0.0036680220586089475,
+        "cohens_dz": 0.3384862221059419,
+        "seeds_where_image_split_higher": 60
+      },
+      "f1_malignant": {
+        "mean_difference_image_minus_inferred": 0.017746369994685415,
+        "ci_low": 0.006783940208987864,
+        "ci_high": 0.028539737861816794,
+        "wilcoxon_p": 0.004366821956689125,
+        "cohens_dz": 0.3213568862957357,
+        "seeds_where_image_split_higher": 60
+      }
+    }
+  },
+  "test_size_audit": {
+    "image": {
+      "n_test_min": 365,
+      "n_test_max": 390,
+      "n_train_min": 1485,
+      "n_train_max": 1510,
+      "max_abs_n_test_difference_vs_patient": 0,
+      "seeds_with_size_mismatch": 0
+    },
+    "inferred": {
+      "n_test_min": 365,
+      "n_test_max": 390,
+      "n_train_min": 1485,
+      "n_train_max": 1510,
+      "max_abs_n_test_difference_vs_patient": 0,
+      "seeds_with_size_mismatch": 0
+    },
+    "patient": {
+      "n_test_min": 365,
+      "n_test_max": 390,
+      "n_train_min": 1485,
+      "n_train_max": 1510
+    }
+  },
+  "size_matching": "greedy",
+  "n_seeds_requested": 100,
+  "skipped_rule_seed_pairs": 0,
+  "seeds_dropped_from_paired_analysis": 0,
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.4.2",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.1",
+    "scipy": "1.17.0",
+    "logreg_C": 0.1,
+    "test_size": 0.2,
+    "weights": "torchvision ResNet50_Weights.IMAGENET1K_V2",
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "device": "cpu"
+  },
+  "corrected_tests": [
+    {
+      "comparison": "vs patient-level",
+      "metric": "AUROC",
+      "mean_diff": 0.022060533361498078,
+      "ci_low": -0.011254138798900946,
+      "ci_high": 0.055375205521897106,
+      "t": 1.3139221075377945,
+      "df": 99,
+      "p": 0.19190892510997495,
+      "seeds_first_higher": 75,
+      "n": 100,
+      "sd_diff": 0.03292757247270479,
+      "se_corrected": 0.016789833457356233,
+      "test_train_ratio": 0.25
+    },
+    {
+      "comparison": "vs patient-level",
+      "metric": "Balanced accuracy",
+      "mean_diff": 0.016688982180876017,
+      "ci_low": -0.01856287735750724,
+      "ci_high": 0.05194084171925928,
+      "t": 0.9393706255966935,
+      "df": 99,
+      "p": 0.3498267766847175,
+      "seeds_first_higher": 71,
+      "n": 100,
+      "sd_diff": 0.034842250710409556,
+      "se_corrected": 0.01776613162698704,
+      "test_train_ratio": 0.25
+    },
+    {
+      "comparison": "vs patient-level",
+      "metric": "F1 (malignant)",
+      "mean_diff": 0.027013558704568202,
+      "ci_low": -0.026077089710184555,
+      "ci_high": 0.08010420711932095,
+      "t": 1.0096083341371385,
+      "df": 99,
+      "p": 0.31514421329453285,
+      "seeds_first_higher": 73,
+      "n": 100,
+      "sd_diff": 0.05247376185732583,
+      "se_corrected": 0.026756473566212517,
+      "test_train_ratio": 0.25
+    },
+    {
+      "comparison": "vs inferred groups",
+      "metric": "AUROC",
+      "mean_diff": 0.01628219646885755,
+      "ci_low": -0.018826633496148854,
+      "ci_high": 0.05139102643386395,
+      "t": 0.9202075453602134,
+      "df": 99,
+      "p": 0.3597011459898729,
+      "seeds_first_higher": 66,
+      "n": 100,
+      "sd_diff": 0.03470088306853599,
+      "se_corrected": 0.01769404799053665,
+      "test_train_ratio": 0.25
+    },
+    {
+      "comparison": "vs inferred groups",
+      "metric": "Balanced accuracy",
+      "mean_diff": 0.012264940629990633,
+      "ci_low": -0.024395719784933538,
+      "ci_high": 0.0489256010449148,
+      "t": 0.663826096769423,
+      "df": 99,
+      "p": 0.5083446269514957,
+      "seeds_first_higher": 60,
+      "n": 100,
+      "sd_diff": 0.036234682031317245,
+      "se_corrected": 0.018476135074651647,
+      "test_train_ratio": 0.25
+    },
+    {
+      "comparison": "vs inferred groups",
+      "metric": "F1 (malignant)",
+      "mean_diff": 0.017746369994685415,
+      "ci_low": -0.038126084529915824,
+      "ci_high": 0.07361882451928665,
+      "t": 0.6302327054036054,
+      "df": 99,
+      "p": 0.5299943728935987,
+      "seeds_first_higher": 60,
+      "n": 100,
+      "sd_diff": 0.055223244783228105,
+      "se_corrected": 0.028158440275359107,
+      "test_train_ratio": 0.25
+    }
+  ]
+}
