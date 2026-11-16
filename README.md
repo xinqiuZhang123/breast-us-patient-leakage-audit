@@ -19,7 +19,3 @@ ResNet-50 uses torchvision `ResNet50_Weights.IMAGENET1K_V2` (downloaded on first
 `--backbone handcrafted --n-splits 3 --n-seeds 20` only for a quick pipeline test, never for reported results.
 
 
-## Status
-Unit tests and a smoke test pass. The full ResNet-50 run has NOT yet been executed with these scripts; until it has,
-every manuscript value must be treated as unverified. Interpret the BUS-BRA inferred-group rule with care: its
-clustering threshold was tuned on BUS-BRA identifiers, so it is optimistic on that release.
